@@ -1,4 +1,4 @@
-# terraform-module-template
+# Terraform Module for Service Control Policies
 Template for Terraform modules
 
 <!-- Uncomment and replace with your module name
@@ -18,7 +18,9 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 <!-- TFDOCS_PROVIDER_START -->
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -34,7 +36,22 @@ No providers.
 <!-- TFDOCS_INPUTS_START -->
 ## Required Inputs
 
-No required inputs.
+The following input variables are required:
+
+### <a name="input_policies"></a> [policies](#input\_policies)
+
+Description: List of policies with their details
+
+Type:
+
+```hcl
+list(object({
+    name        = string
+    file        = string
+    target_ids  = list(string)
+    description = string
+  }))
+```
 
 ## Optional Inputs
 
@@ -45,7 +62,10 @@ No optional inputs.
 <!-- TFDOCS_OUTPUTS_START -->
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_policy_arns"></a> [policy\_arns](#output\_policy\_arns) | Map of policy ARNs. |
+| <a name="output_policy_ids"></a> [policy\_ids](#output\_policy\_ids) | Map of policy IDs. |
 
 <!-- TFDOCS_OUTPUTS_END -->
 
