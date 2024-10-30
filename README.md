@@ -40,30 +40,22 @@ The following input variables are required:
 
 ### <a name="input_policies"></a> [policies](#input\_policies)
 
-Description: List of policy configurations
+Description: List of policies with their details
 
 Type:
 
 ```hcl
 list(object({
     name        = string
-    description = string
-    statements  = string       # Path to the JSON file containing policy statements
-    target_ids  = list(string) # List of target account IDs or OU IDs
+    file        = string
+    target_ids  = list(string)
+    description = string # Ensure this is included
   }))
 ```
 
 ## Optional Inputs
 
-The following input variables are optional (have default values):
-
-### <a name="input_tags"></a> [tags](#input\_tags)
-
-Description: Tags to apply to all resources created in this module
-
-Type: `map(string)`
-
-Default: `{}`
+No optional inputs.
 
 <!-- TFDOCS_INPUTS_END -->
 
