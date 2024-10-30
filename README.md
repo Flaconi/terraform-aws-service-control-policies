@@ -49,7 +49,7 @@ list(object({
     name        = string
     file        = string
     target_ids  = list(string)
-    description = string # Ensure this is included
+    description = string
   }))
 ```
 
